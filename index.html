@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Faboterápicos</title>
+    <!-- Favicon (Icono de araña para la pestaña) -->
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 10C8 6 3 9 3 9M12 10C16 6 21 9 21 9M12 11C6 11 2 15 2 15M12 11C18 11 22 15 22 15M12 13C6 17 4 21 4 21M12 13C18 17 20 21 20 21M12 14C9 18 8 23 8 23M12 14C15 18 16 23 16 23' stroke='%231e293b' stroke-width='1.5' stroke-linecap='round'/><circle cx='12' cy='9.5' r='2.5' fill='%231e293b' /><ellipse cx='12' cy='15.5' rx='3.5' ry='4.5' fill='%231e293b' /><path d='M10.5 14L13.5 14L12 15.5L13.5 17L10.5 17L12 15.5Z' fill='%23ef4444' /></svg>" type="image/svg+xml">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- html2canvas -->
@@ -152,17 +154,24 @@
                         </div>
                     </div>
 
-                    <!-- Notificación Obligatoria -->
-                    <div class="mt-6 mx-6 bg-sky-600 text-white p-4 rounded-xl shadow-md text-center">
-                        <p class="font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5 text-orange-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                            Aviso Importante
-                            <svg class="w-5 h-5 text-orange-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                        </p>
-                        <p class="text-sm mt-1 font-medium text-sky-50">
-                            Se tiene que notificar obligatoriamente la referencia de estos pacientes al <br/>
-                            <strong class="text-white text-base">Programa de Epidemiología y de Vectores</strong>.
-                        </p>
+                    <!-- Notificación Obligatoria y Código QR -->
+                    <div class="mt-6 mx-6 bg-sky-600 text-white p-4 rounded-xl shadow-md flex items-center justify-center gap-5 text-left">
+                        <div class="flex-1">
+                            <p class="font-bold text-sm uppercase tracking-wide flex items-center gap-2 mb-1">
+                                <svg class="w-5 h-5 text-orange-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                Aviso Importante
+                            </p>
+                            <p class="text-sm font-medium text-sky-50">
+                                Se tiene que notificar la referencia de estos pacientes al <br/>
+                                <strong class="text-white text-base">Programa de Epidemiología y de Vectores de la Jurisdicción Sanitaria No. 6</strong>.
+                            </p>
+                        </div>
+                        
+                        <!-- Contenedor del QR Fijo -->
+                        <div class="flex-shrink-0 bg-white p-1.5 rounded-xl shadow-sm">
+                            <!-- Imagen fija, toma el archivo local qrcode_drive.google.com.png -->
+                            <img src="qrcode_drive.google.com.png" alt="QR Reporte" class="w-20 h-20 object-contain" onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://drive.google.com';" />
+                        </div>
                     </div>
 
                 </div>
