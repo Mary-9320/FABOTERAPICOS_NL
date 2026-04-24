@@ -163,7 +163,7 @@
                             </p>
                             <p class="text-sm font-medium text-sky-50">
                                 Se tiene que notificar la referencia de estos pacientes al <br/>
-                                <strong class="text-white text-base">Programa de Epidemiología y de Vectores de la Jurisdicción Sanitaria No. 6</strong>.
+                                <strong class="text-white text-base">Programa de Epidemiología y de Vectores DE LA JS6</strong>.
                             </p>
                         </div>
                         
@@ -376,12 +376,15 @@
 
         // --- IA y Procesamiento de Imagen ---
         async function processImageWithGemini(base64Data, mimeType) {
-            const apiKey = ""; // La llave se inyecta por el entorno
+            
+            // PARA TU GITHUB PAGES: Pon tu clave aquí dentro de las comillas:
+            // Ejemplo: const apiKey = "AIzaSyC09JaPBUudyDXBRe2SWIbYHwbRX2NSodY";
+            const apiKey = "AIzaSyC09JaPBUudyDXBRe2SWIbYHwbRX2NSodY"; 
+            
             const promptText = "Extrae los datos de esta tabla de inventario. Devuelve un arreglo donde cada elemento represente una fila con la 'unidad' (nombre del hospital), 'faboterapico' (tipo de suero) y 'existencia' (cantidad en número entero).";
             
             const payload = {
                 contents: [{
-                    role: "user",
                     parts: [
                         { text: promptText },
                         { inlineData: { mimeType: mimeType, data: base64Data } }
@@ -412,7 +415,9 @@
                         body: JSON.stringify(payload)
                     });
                     
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                     
                     const result = await response.json();
                     const textData = result.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -489,7 +494,7 @@
                         renderTable(); // Re-dibujar la tabla con los nuevos datos
                     }
                 } catch (err) {
-                    alert("Error al analizar la imagen. Por favor, intenta de nuevo.");
+                    alert("Error al analizar la imagen. Por favor, asegúrate de haber puesto tu API Key en el código o intenta de nuevo.");
                 } finally {
                     btnUpload.disabled = false;
                     btnUploadText.textContent = "Escanear Imagen";
