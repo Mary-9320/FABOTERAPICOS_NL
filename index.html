@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Faboterápicos</title>
-    <!-- Favicon (Icono de araña para la pestaña) -->
     <link rel="icon" href="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 10C8 6 3 9 3 9M12 10C16 6 21 9 21 9M12 11C6 11 2 15 2 15M12 11C18 11 22 15 22 15M12 13C6 17 4 21 4 21M12 13C18 17 20 21 20 21M12 14C9 18 8 23 8 23M12 14C15 18 16 23 16 23' stroke='%231e293b' stroke-width='1.5' stroke-linecap='round'/><circle cx='12' cy='9.5' r='2.5' fill='%231e293b' /><ellipse cx='12' cy='15.5' rx='3.5' ry='4.5' fill='%231e293b' /><path d='M10.5 14L13.5 14L12 15.5L13.5 17L10.5 17L12 15.5Z' fill='%23ef4444' /></svg>" type="image/svg+xml">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 min-h-screen flex flex-col">
 
-    <!-- Navegación -->
     <nav class="bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center sticky top-0 z-10 shadow-sm">
         <h1 class="text-xl font-bold text-orange-600 flex items-center gap-2">
-            <!-- Icon Alert Triangle -->
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             Dashboard de Faboterápicos
         </h1>
@@ -32,10 +27,8 @@
         </div>
     </nav>
 
-    <!-- Contenido Principal -->
     <main class="flex-1 p-6 max-w-7xl mx-auto w-full">
         
-        <!-- PESTAÑA: EDITOR -->
         <div id="view-editor" class="block bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-opacity duration-300">
             <div class="p-6 border-b border-slate-200 flex justify-between items-start bg-slate-50 flex-wrap gap-4">
                 <div>
@@ -75,8 +68,7 @@
                         </tr>
                     </thead>
                     <tbody id="table-body" class="divide-y divide-slate-100">
-                        <!-- Generado por JS -->
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
             <div class="p-4 bg-sky-50 border-t border-sky-100 flex items-start gap-3">
@@ -87,7 +79,6 @@
             </div>
         </div>
 
-        <!-- PESTAÑA: INFOGRAFÍA -->
         <div id="view-infografia" class="hidden transition-opacity duration-300">
             <div class="flex justify-between items-center mb-6">
                 <p class="text-slate-500">Vista previa de la infografía generada.</p>
@@ -97,32 +88,20 @@
                 </button>
             </div>
 
-            <!-- CONTENEDOR A CAPTURAR -->
             <div class="overflow-auto shadow-2xl rounded-xl border border-slate-200 bg-white p-4">
                 <div id="infographic-container" class="w-[800px] min-w-[800px] mx-auto bg-sky-50 font-sans relative pb-8">
                     
-                    <!-- Header Infografía -->
-                    <div class="bg-orange-500 text-white text-center py-6 px-4">
+                    <div class="bg-orange-500 text-white text-center py-6 px-4 border-b border-orange-600">
                         <h1 class="text-3xl font-black tracking-tight mb-2 uppercase">Directorio de Faboterápicos</h1>
-                        <h2 class="text-xl font-medium text-orange-100">¿A dónde referir un paciente en el estado?</h2>
+                        <h2 class="text-xl font-medium text-orange-100">¿A dónde referir un paciente con intoxicación por animal ponzoñoso?</h2>
                         <div id="fecha-display-container" class="mt-4 inline-block bg-white/20 border border-white/30 px-5 py-1.5 rounded-full text-sm font-bold tracking-widest shadow-sm backdrop-blur-sm uppercase">
                             CORTE: <span id="fecha-display"></span>
                         </div>
                     </div>
-                    
-                    <div class="bg-white/80 py-2 text-center border-b border-sky-100">
-                        <p class="text-sm font-medium text-slate-600">
-                            Unidades ordenadas por mayor disponibilidad general. <br/>
-                            <span class="text-xs text-slate-500">(Excluye unidades con existencia crítica de antiviperinos)</span>
-                        </p>
-                    </div>
 
-                    <!-- Grid de Hospitales -->
-                    <div id="infographic-grid" class="p-6 grid grid-cols-2 gap-4">
-                        <!-- Generado por JS -->
-                    </div>
+                    <div id="infographic-grid" class="p-6 grid grid-cols-2 gap-4 mt-2">
+                        </div>
 
-                    <!-- Footer y Glosario -->
                     <div class="mt-4 mx-6 bg-white rounded-xl border border-sky-200 p-5 shadow-sm">
                         <h4 class="text-center font-bold text-sky-800 mb-4 uppercase tracking-wide">Guía de Faboterápicos</h4>
                         <div class="grid grid-cols-5 gap-2 text-center divide-x divide-sky-100">
@@ -154,7 +133,6 @@
                         </div>
                     </div>
 
-                    <!-- Notificación Obligatoria y Código QR -->
                     <div class="mt-6 mx-6 bg-sky-600 text-white p-4 rounded-xl shadow-md flex items-center justify-center gap-5 text-left">
                         <div class="flex-1">
                             <p class="font-bold text-sm uppercase tracking-wide flex items-center gap-2 mb-1">
@@ -167,9 +145,7 @@
                             </p>
                         </div>
                         
-                        <!-- Contenedor del QR Fijo -->
                         <div class="flex-shrink-0 bg-white p-1.5 rounded-xl shadow-sm">
-                            <!-- Imagen fija, toma el archivo local qrcode_drive.google.com.png -->
                             <img src="qrcode_drive.google.com.png" alt="QR Reporte" class="w-20 h-20 object-contain" onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://drive.google.com';" />
                         </div>
                     </div>
@@ -179,7 +155,6 @@
         </div>
     </main>
 
-    <!-- Script de Lógica -->
     <script>
         // --- Iconos SVG (Constantes) ---
         const SVG_VIUDA = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8"><path d="M12 10C8 6 3 9 3 9M12 10C16 6 21 9 21 9M12 11C6 11 2 15 2 15M12 11C18 11 22 15 22 15M12 13C6 17 4 21 4 21M12 13C18 17 20 21 20 21M12 14C9 18 8 23 8 23M12 14C15 18 16 23 16 23" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="9.5" r="2.5" fill="#1e293b" /><ellipse cx="12" cy="15.5" rx="3.5" ry="4.5" fill="#1e293b" /><path d="M10.5 14L13.5 14L12 15.5L13.5 17L10.5 17L12 15.5Z" fill="#ef4444" /></svg>`;
